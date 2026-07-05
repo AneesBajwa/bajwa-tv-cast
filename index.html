@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bajwa TV</title>
+    <link rel="stylesheet" href="receiver.css" />
+    <!-- CAF receiver SDK + hls.js (the same engine the app uses) -->
+    <script src="https://www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
+</head>
+<body>
+    <!-- Plain <video>; hls.js drives it (skipPlayersLoad bypasses CAF's player) -->
+    <video playsinline></video>
+
+    <!-- Branded overlays layered over the player -->
+    <div id="idle" class="overlay">
+        <div class="brand">Bajwa TV</div>
+        <div class="hint">Ready to cast</div>
+    </div>
+
+    <div id="error" class="overlay hidden">
+        <div class="brand">Bajwa TV</div>
+        <div id="error-text" class="hint">Stream unavailable</div>
+    </div>
+
+    <script src="receiver.js"></script>
+</body>
+</html>

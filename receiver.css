@@ -1,0 +1,72 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    background: #0b0e14;
+    color: #f2f5fa;
+    font-family: -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Chromecast renders the receiver at a fixed 1280x720; contain keeps the
+   whole frame visible (letterboxed) instead of overflowing + cropping. */
+video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #0b0e14;
+}
+
+.overlay .brand {
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.overlay .hint {
+    font-size: 24px;
+    color: #9aa7bd;
+}
+
+.channel-info {
+    position: fixed;
+    left: 48px;
+    bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(11, 14, 20, 0.86);
+    border-radius: 16px;
+    padding: 16px 28px;
+}
+
+.channel-info img {
+    height: 56px;
+}
+
+.channel-info #channel-name {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.channel-info #now-next {
+    font-size: 20px;
+    color: #9aa7bd;
+}
+
+.hidden {
+    display: none !important;
+}
